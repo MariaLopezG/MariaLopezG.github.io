@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madrid Marvels</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="images/logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+
+
+        body{
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color:#9F8C76;
+            background-color: #faf6e7;
+        }
+
+        /* Styling navbar */
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.9);;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            color:#D2B48C;
+            z-index: 9999;
+        }
+
+        .navbar h1 {
+            margin-top: 12px;
+            margin-left: 60px;
+            font-size: 24px;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar li {
+            margin-right: 20px;
+            
+        }
+
+        .navbar a {
+            color: #9F8C76;
+            text-decoration:none;
+            border: 10px  #faf6e7;
+            border-radius: 5px;
+        }
+
+        .navbar a:hover {
+            color: white;
+            
+        }
+
+        .navbar li:last-child {
+            margin-right: 0;
+        }
+
+        /* End of navbar */
+
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .image-container {
+            flex:1;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .description {
+            flex: 1;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .description p {
+            margin-top: 50px;
+        }       
+
+
+        /* Styling the slideshow starts here*/
+
+        #slideshow {
+            overflow: hidden;
+            height: 510px;
+            width: 728px;
+            /* margin: 0 auto; */
+            margin-top: 60px;
+            margin-left: 250px;
+        }
+     
+        /* with a fixed width and height */
+        
+        .slide {
+            float: left;
+            height: 486px;
+            width: 728px;
+        }
+
+        .slide h1 {
+            background-color: #faf6e7;
+            text-align: center;
+            font-size: 20px;
+            margin-top: 0px;
+        }
+        
+        /* Add animation to the slides */
+        
+        .slide-wrapper {
+            
+            /* Calculate the total width on the
+        basis of number of slides */
+            width: calc(728px * 4);
+            
+            /* Specify the animation with the
+        duration and speed */
+            animation: slide 10s ease infinite;
+        }
+        
+        /* Set the background color
+        of each of the slides */
+        
+        .slide:nth-child(1) {
+            background-image: url(images/Plaza_Mayor_de_Madrid_06.jpg);
+            background-size: contain;
+        }
+        
+        .slide:nth-child(2) {
+            background-image: url(images/Las-Meninas-at-Museo-del-Prado.jpg);
+            background-size: contain;
+        }
+        
+        .slide:nth-child(3) {
+            background-image: url(images/27166427597_71fd071644_b.jpg);
+            background-size: contain;
+        }
+        
+        .slide:nth-child(4) {
+            background-image: url(images/Bocadillo-de-calamares.jpeg);
+            background-size: contain;        }
+        
+        /* Define the animation 
+        for the slideshow */
+        
+        @keyframes slide {
+            
+            /* Calculate the margin-left for 
+        each of the slides */
+            20% {
+                margin-left: 0px;
+            }
+            40% {
+                margin-left: calc(-728px * 1);
+            }
+            60% {
+                margin-left: calc(-728px * 2);
+            }
+            80% {
+                margin-left: calc(-728px * 3);
+            }
+        }
+
+    /* End of slideshow */
+
+    /* Styling about-us section */
+
+        .about-us {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .about-us h1 {
+            text-align: center;
+            /* color: #333; */
+        }
+
+        #blogger1 {
+            margin-top: 55px;
+        }
+
+        #blogger2 {
+            width: auto;
+            height: 400px;
+            margin-top: 170px;
+            margin-left: 70px;
+        }
+        
+        .blogger-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .blogger {
+            flex: 0 0 48%; /* Each blogger takes up 48% of the container */
+            position: relative;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .blogger:hover {
+            transform: scale(1.05);
+        }
+
+        .blogger img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .blogger .blogger-description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            width: 100%;
+            transform: translateY(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .blogger:hover .blogger-description {
+            transform: translateY(0);
+        }
+
+        .blogger .blogger-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .blogger .blogger-description p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .contact-info {
+            width: 50%;
+            background-color: #f1e9d2;
+        }
+
+
+        /* End of about-us section */
+
+        /* Start of the footer */
+
+        /* .footer {
+            background-color: #f1e9d2;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .footer-form {
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer input[type="text"], .footer input[type="email"] {
+            padding: 10px; 
+            margin-bottom: 10px;
+            width: 40%;
+        }
+
+        button{
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 10px;
+            background: #D2B48C;
+            color: white;
+            font-weight: bold;
+            cursor:pointer;
+        }
+        button:hover{
+            color: white;
+            background-color: #C8AD7F;
+            transform: translateY(-1px);
+
+        }
+
+        .fa:hover {
+            opacity: 0.9;
+        }
+
+        .fa {
+            padding: 20px;
+            font-size: 40px;
+            width: 60px;
+            text-decoration: none;
+            margin: 5px 80px;
+        } */
+ 
+
+        /* End of footer */
+
+
+        /* Footer contact form */
+
+        .footer form {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .footer input[type="text"],
+        .footer input[type="email"],
+        .footer button {
+            padding: 10px;
+            margin-bottom: 10px;
+            width: calc(100% - 22px); /* Adjusted width to accommodate padding and margin */
+            border: none;
+            border-radius: 5px;
+        }
+
+        .footer input[type="text"],
+        .footer input[type="email"] {
+            background-color: #f9f5e9; /* Light yellow background */
+        }
+
+        .footer input[type="text"]:focus,
+        .footer input[type="email"]:focus,
+        .footer button:focus {
+            outline: none;
+            box-shadow: 0 0 5px #D2B48C; /* Added focus styling */
+        }
+
+        .footer button {
+            background-color: #D2B48C;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition on hover */
+        }
+
+        .footer button:hover {
+            background-color: #C8AD7F;
+        }
+
+
+
+        /* Footer socials */
+        .footer {
+            background-color: #f1e9d2;
+            color: #fff;
+            padding: 20px;
+            display: flex; /* Display footer content in a row */
+            justify-content: space-between; /* Space out the content */
+            width: 100%;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .left {
+            width: 45%;
+        }
+
+        .right {
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .contact-info {
+            margin-right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .social-icons {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+
+        .social-icons li {
+            margin-right: 10px;
+        }
+
+        .social-icons li:last-child {
+            margin-right: 0;
+        }
+
+        .fa {
+            font-size: 20px;
+            color: #3b5998;
+        }
+
+        .fa:hover {
+            opacity: 0.7;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1> Madrid Marvels</h1>
+        <ul class="navbar-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Food Spots</a></li>
+            <li><a href="#">Things to Do</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="image-container">
+            <img src="images/Madrid.jpg" style="border-radius: 10px;" alt="Madrid">
+        </div>
+        <div class="description" id="more">
+            <p>Welcome to Madrid, the vibrant capital of Spain. Discover the rich culture, delicious cuisine, and exciting attractions that this beautiful city has to offer. </p>
+            
+            <p>From the magnificent architecture of historic landmarks such as the Royal Palace and Plaza Mayor to the bustling energy of its streets filled with cafes, tapas bars, and flamenco shows, Madrid never fails to captivate its visitors.
+                This blog is your ultimate guide to exploring Madrid like a local. Whether you're interested in discovering hidden food spots serving authentic Spanish delicacies or seeking out the best activities and events happening in the city, we've got you covered. Join us on a journey through the enchanting streets of Madrid as we unveil its marvels and share insider tips to make your visit truly unforgettable.</p>
+    
+        </div>
+
+        <div id="slideshow">
+            <div class="slide-wrapper">
+     
+                <!-- Define each of the slides
+             and write the content -->
+     
+                <div class="slide">
+                    <h1 class="slide-number">
+                        Plaza Mayor de Madrid
+                    </h1>
+                </div>
+                <div class="slide">
+                    <h1 class="slide-number">
+                        Las Meninas at Museo del Prado
+                    </h1>
+                </div>
+                <div class="slide">
+                    <h1 class="slide-number">
+                        Chulapos bailando el Chotis
+                    </h1>
+                </div>
+                <div class="slide">
+                    <h1 class="slide-number">
+                        Bocadillo de calamares, aceitunas y cerveza
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="about-us">
+            <h1>About Us</h1>
+            <div class="blogger-container">
+                <div class="blogger">
+                    <img src="images/about-us-adea.png" alt="Blogger 1" id="blogger1">
+                    <div class="blogger-description">
+                        <p class="blogger-name">Adea</p>
+                        <p>International student from Kosovo, interested in Cyber Security. 
+                            Very cool and funny after you get to know me hihi!!</p>
+                    </div>
+                </div>
+                <div class="blogger">
+                    <img src="images/about-us-maria.png" alt="Blogger 2" id="blogger2">
+                    <div class="blogger-description">
+                        <p class="blogger-name">Maria</p>
+                        <p>International student from Spain, currently studying in San Francisco for a year abroad!!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer">
+            <div class="left">
+                <form>
+                    <input type="text" placeholder="Name">
+                    <input type="text" placeholder="Surname">
+                    <input type="email" placeholder="Email">
+                    <button>Subscribe</button>
+                </form>
+            </div>
+            <div class="right contact-info">
+                <p><i class="fa fa-map-marker"></i> Madrid, Spain</p>
+                <p><i class="fa fa-envelope"></i> info@madridmarvels.com</p>
+                <ul class="social-icons">
+                    <li><i class="fa fa-facebook"></i> Madrid Marvels</li>
+                    <li><i class="fa fa-instagram"></i> @madridmarvels</li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+</html>
